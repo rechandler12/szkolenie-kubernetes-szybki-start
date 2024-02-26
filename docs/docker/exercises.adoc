@@ -1,0 +1,43 @@
+= Zadania
+
+== Zadanie 1. Pobranie obrazu
+
+. Pobierz obraz `nginx`
+
+== Zadanie 2. Uruchomienie obrazu
+
+. Uruchom kontener z obrazu `httpd`
+
+== Zadanie 3. Sprawdzenie listy obrazów
+
+. Sprawdź listę obrazów komendą `docker image ls`
+
+== Zadanie 4. Sprawdzenie działających kontenerów
+
+. Sprawdź listę działających kontenerów komendą `docker ps`
+
+== Zadanie 5. Uruchomienie kontenera na konkretnym porcie
+
+. Uruchom kontener z obrazu `nginx`
+. Wskaż port 8000 na hoście, na którym ma działać ten kontener
+. Sprawdź, czy `nginx` działa
+
+== Zadanie 6. Sprawdzanie logów
+
+. Sprawdź logi kontenera z poprzedniego zadania za pomocą `docker logs`
+
+== Zadanie 7. Uruchomienie bazy danych
+
+. Uruchom kontener z obrazu `postgres`
+. Wskaż odpowiednie porty
+. Przekaż odpowiednie zmienne środowiskowe
+. Ustaw odpowiednie volumeny
+. Sprawdź, czy baza danych działa (możesz za pomocą logów)
+
+== Zadanie 8. Budowanie obrazu
+
+. Stwórz `Dockerfile`
+. Stwórz obraz z `nginx`
+. Zbuduj obraz i otaguj go jako `my-nginx`
+. Uruchom kontener z tego obrazu
+. Sprawdź, czy kontener działa (możesz za pomocą logów)

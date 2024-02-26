@@ -1,0 +1,24 @@
+= Podstawy teoretyczne
+
+== 10 powodów, dla których warto konteneryzować aplikacje
+. Izolacja i jednolitość: Kontenery izolują aplikacje od środowiska, co eliminuje konflikty zależności i zapewnia jednolitość między różnymi środowiskami.
+. Łatwość przenoszenia: Kontenery zawierają wszystkie niezbędne zależności, co ułatwia przenoszenie aplikacji między różnymi platformami i infrastrukturami.
+. Szybkość wdrażania: Kontenery uruchamiają się błyskawicznie, co przyspiesza proces wdrażania i umożliwia elastyczne skalowanie w zależności od obciążenia.
+. Elastyczność skalowania: Kontenery umożliwiają dynamiczne dodawanie lub usuwanie instancji aplikacji w zależności od potrzeb, co wspiera elastyczne skalowanie.
+. Łatwe zarządzanie zasobami: Kontenery pozwalają precyzyjnie zarządzać zasobami, co prowadzi do efektywnego wykorzystania infrastruktury i redukcji kosztów.
+. Łatwość utrzymania: Aktualizacje i poprawki mogą być łatwo wdrażane w kontenerach, co minimalizuje czas niedostępności aplikacji.
+. Łatwa replikacja środowiska deweloperskiego: Kontenery pozwalają na dokładne replikowanie środowiska deweloperskiego na produkcji, co eliminuje problemy wynikające z różnic między środowiskami.
+. Bezpieczeństwo: Kontenery posiadają mechanizmy bezpieczeństwa, takie jak izolacja procesów, co pomaga w zabezpieczeniu aplikacji i danych przed nieautoryzowanym dostępem.
+. Automatyzacja: Kontenery integrują się łatwo z narzędziami do automatyzacji, co ułatwia zarządzanie cyklem życia aplikacji.
+. Podział na mikroserwisy: Kontenery wspierają architekturę mikroserwisów, co ułatwia rozwijanie, utrzymanie i skalowanie poszczególnych komponentów aplikacji niezależnie.
+
+== Porównanie Dockera i VM
+. Rozmiar i Wydajność:
+** Docker: Kontenery Dockerowe są lżejsze od maszyn wirtualnych, ponieważ dzielą jądro systemowe hosta i współdzielą zasoby z systemem operacyjnym hosta. To sprawia, że są bardziej wydajne i uruchamiają się szybciej.
+** Maszyny wirtualne: VM są bardziej obciążające dla systemu host, ponieważ każda z nich wymaga własnego systemu operacyjnego, co prowadzi do większego zużycia zasobów.
+. Izolacja:
+** Docker: Kontenery Dockerowe używają przestrzeni użytkownika do izolacji procesów, dzięki czemu są lżejsze. Izolacja jest mniej ścisła niż w przypadku maszyn wirtualnych.
+** Maszyny wirtualne: VM oferują pełną izolację, ponieważ każda z nich działa na własnym systemie operacyjnym, ale kosztem większego zużycia zasobów.
+
+image::vm.png[]
+image::containers.png[]

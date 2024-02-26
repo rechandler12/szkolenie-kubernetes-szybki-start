@@ -1,0 +1,158 @@
+= Zadania
+
+== Zadanie 1: Wejście na dashboard
+
+=== Wprowadzenie
+Zarządzać i monitorować klaster można w bardzo różny sposób. Providerzy cloudowi dostarczają często swoje narzędzia. Mamy również do dyspozycji narzędzia konsolowe, dzisiaj jednak skupimy się na w miarę prostym graficznym narzędziu, które pozwoli nam przeglądać zasoby klastra. Zainstalujemy Kubernetes Dashboard za pomocą plików yaml. Dokumentacja znajduje się tutaj: https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
+
+=== Kroki
+
+. Wygeneruj token, który będzie potrzebny do zalogowania `kubectl -n kubernetes-dashboard create token admin-user`
+. Powinieneś otrzymać token na kształt tego poniżej. Zapisz go na boku, przyda się za chwilę
+
+Przykładowy token
+
+[source]
+----
+eyJhbGciOiJSUzI1NiIsImtpZCI6IlZCYXdWMmJUZ3ozVEpKbHpIRVdFeHppOUV3T2llVDIxbmZ5UWpvOVQxT28ifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiXSwiZXhwIjoxNjg1MTI0ODc5LCJpYXQiOjE2ODUxMjEyNzksImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsInNlcnZpY2VhY2NvdW50Ijp7Im5hbWUiOiJhZG1pbi11c2VyIiwidWlkIjoiZDU2MTJjZDktNjM5NS00ZWFhLTgxY2UtZGRkM2M0ODgzNDljIn19LCJuYmYiOjE2ODUxMjEyNzksInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlcm5ldGVzLWRhc2hib2FyZDphZG1pbi11c2VyIn0.d2Kab8lyfTb08cJS5wjoW_OEzE66UJVHCcqgIghQ6lWLDOnO4MaudwskTNhMIpUorJaMwDy3ifH0OwTo2P6WZ3Y_oywdj8T-EFws22Ot7sFvvXK1C1B8wTJYQnx4SviaqhixKnLoy1nWTMmUbtn2O7NPXB40_RvCt3ehoYzrleNUb3Cdp5nUfYYWHoyExSblQYvBVK98tj7eozGOeVMuYjvSemJVCdEmjzAXdqr7uCanzspw7I6DQDJCfgG9Hl7D-UdxiK9ZaiZjPt8xMLmmFkJ0FFNO9HuEx26HQe_1Dwim-yEcpRUmBbccEFZHioPCLW2eXElQxRX0xGHHE4OQIg
+----
+
+[start=8]
+. Wejdź na https://dashboard.sX.codomi.dev
+. Zaloguj się za pomocą wcześniej wygenerowanego tokena
+. Obejrzyj zasoby swojego klastra
+
+== Zadanie 2: Utworzenie namespace
+
+. Utwórz imperatywnie namespace `szkolenie-imp`
+. Utwórz deklaratywnie namespace `szkolenie-dek`
+
+== Zadanie 3. Usunięcie namespace
+
+. Usuń namespace `szkolenie-imp` i `szkolenie-dek` w odpowiadający im sposób
+
+== Zadanie 4. Stworzenie poda
+
+. Utwórz namespace `szkolenie`
+. Utwórz imperatywnie poda z obrazu `nginx` o nazwie `nginx-imp` w powyższym namespace
+. Utwórz deklaratywnie poda z obrazu `nginx` o nazwie `nginx-dek` w powyższym namespace
+
+== Zadanie 5. Sprawdzenie poda
+
+. Wylistuj wszystkie pody w namespace `szkolenie`
+. Za pomocą komendy `kubectl describe` sprawdź pody `nginx-imp` i `nginx-dek`
+
+== Zadanie 6. Usunięcie poda
+
+. Usuń pody `nginx-imp` i `nginx-dek` w odpowiadający im sposób
+
+== Zadanie 7. Stworzenie deploymentu
+
+. Stwórz deployment z obrazu `nginx` o nazwie `nginx` w namespace `szkolenie`
+. Zrób 3 repliki
+
+== Zadanie 8. Sprawdzenie deploymentu
+
+. Wylistuj wszystkie deploymenty w namespace `szkolenie`
+. Wylistuj wszystkie pody w namespace `szkolenie`
+. Za pomocą komendy `kubectl describe` sprawdź deployment `nginx`
+
+== Zadanie 9. Usunięcie deploymentu
+
+. Usuń któregoś z podów
+. Co się stało?
+. Usuń cały deployment
+
+== Zadanie 10. Skalowanie deploymentu
+
+. Zeskaluj deployment do 2 replik
+
+== Zadanie 11. Utworzenie bazy danych
+
+. Na podstawie https://hub.docker.com/_/postgres utwórz Deployment z bazą danych
+. NIE twórz volumenu i sekretów
+
+== Zadanie 12. Przerobienie zmiennej środowiskowej z hasłem do Postgresa na Secret
+
+. Dodaj sekret, w którym będzie zapisane hasło do bazy danych
+. Dodaj obsługę sekretu w Postgresie, żeby wartość zmiennej środowiskowej była z niego brana
+
+== Zadanie 13. Wolumen dla bazy danych
+
+. Dodaj PVC
+. Zmodyfikuj Deployment z bazą danych, żeby obsługiwał PVC
+. Zrób 2 repliki
+
+== Zadanie 14. Baza danych jako StatefulSet
+
+. Przerób bazę danych na StatefulSet
+
+== Zadanie 15. Service
+
+. Stwórz deployment z `nginx`
+. Stwórz Service, który będzie spinał pody utworzone przez Deployment
+
+== Zadanie 16. Tworzenie service typu NodePort
+
+. Stwórz deployment z `httpd`
+. Stwórz Service typu NodePort, który łączy pody z tym service
+. Sprawdź IP Nodów za pomocą `kubectl get nodes -o wide`
+. Sprawdź za pomocą `kubectl get svc` na jakim porcie wystawił się service
+. Za pomocą curla uderz do każdego node i sprawdź, czy nginx odpowiada
+
+== Zadanie 17. Tworzenie Ingress
+
+. Do poprzedniego Deploymentu stwórz Ingressa pod hostem ingress.sX.codomi.dev
+. Pamiętaj o adnotacji `cert-manager.io/cluster-issuer: letsencrypt-production`
+. Wejdź w przeglądarce na powyższy host i sprawdź, czy usługa odpowiada
+
+== Zadanie 18. Blokada ruchu za pomocą NetworkPolicy
+
+. Stwórz namespace `ns1`
+. Stwórz namespace `ns2`
+. W `ns1` stwórz obraz busybox, który za pomocą curla uderza do obrazu w `ns2`
+. W `ns2` stwórz obraz nginx
+. Za pomocą NetworkPolicy ogranicz ruch pomiędzy namespaceami
+. Sprawdź w logach czy faktycznie komunikacja została ucięta
+
+== Zadanie 19. Instalacja minikube
+
+. Zainstaluj Dockera zgodnie z https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+. Zainstaluj `kubectl` zgodnie z https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-kubectl-binary-with-curl-on-linux
+. Zainstaluj `minikube` zgodnie z https://minikube.sigs.k8s.io/docs/start/ (tylko punkty 1)
+. Uruchom klaster za pomocą `minikube start --driver=docker --nodes 2 --cni calico`
+. Sprawdź, czy klaster działa za pomocą `kubectl cluster-info`
+
+== Zadanie 20. Użycie ConfigMap
+
+. Stwórz ConfigMap z konfiguracją do Nginx
+. Stwórz poda z obrazu Nginx i przekaż tę konfigurację do tego poda
+. Zaloguj się do poda i sprawdź czy konfiguracja została wrzucona do odpowiedniego miejsca
+
+== Zadanie 21. Tworzenie ServiceAccount
+
+. Stwórz ServiceAccount o nazwie `example-sa` w namesapace `kubernetes-dashboard`
+. Wygeneruj token dla tego SA za pomocą `kubectl -n kubernetes-dashboard create token example-sa`
+. Zaloguj się tym tokenem do Dashboardu, sprawdź co widzisz a czego nie
+
+== Zadanie 22. Tworzenie roli i powiązania
+
+. Stwórz rolę, która umożliwia przeglądanie namespace
+. Powiąż rolę z wcześniej stworzonym ServiceAccount
+. Zaloguj się za pomocą tego konta
+. Sprawdź jak zmieniły się uprawnienia
+
+== Zadanie 23. Tworzenie HPA
+
+. Na podstawie artykułu https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
+. Stwórz odpowiednie deploymenty
+. Stwórz HPA
+. Wygeneruj ruch i sprawdź, czy pody się automatycznie tworzą i kasują
+
+== Zadanie 24. Użycie Helma
+
+. Uruchom MariaDB za pomocą Helma (https://github.com/bitnami/charts/tree/main/bitnami/mariadb)
+. Uruchom PhpMyAdmin za pomocą Helma (https://github.com/bitnami/charts/tree/main/bitnami/phpmyadmin)
+. Powiąż PhpMyAdmin z MariaDB
+. Ustaw Ingressa w PhpMyAdmin na host: phpmyadmin.sX.codomi.dev
+. Pamiętaj o adnotacji `cert-manager.io/cluster-issuer: letsencrypt-production`

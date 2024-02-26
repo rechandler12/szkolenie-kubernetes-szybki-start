@@ -1,0 +1,81 @@
+= Szkolenie Kubernetes szybki start
+:author: Juliusz Marciniak
+:imagesdir: ./images
+:toc:
+:toclevels: 4
+:toc-title: Spis treści
+
+<<<
+
+== Opis
+
+Szkolenie Kubernetes szybki start obejmuje naukę i praktyczne doświadczenie związane z zarządzaniem kontenerami. Uczestnicy zdobędą umiejętności w zakresie konfiguracji i utrzymania klastra Kubernetes, co obejmuje zarządzanie zasobami, skalowalność i dostępność. W trakcie szkolenia praktycznego uczestnicy bedą pracować nad rzeczywistymi przypadkami użycia, implementować aplikacje w kontenerach i nauczą się jak skutecznie monitorować oraz debugować środowisko. Ponadto szkolenie obejmuje tematy związane z bezpieczeństwem, takie jak zarządzanie dostępem, autentykacja i szyfrowanie. Kurs ten umożliwi uczestnikom zrozumienie ekosystemu Kubernetes i przygotuje ich do efektywnego wdrażania i utrzymania aplikacji w kontenerach w środowisku produkcyjnym.
+
+== O trenerze
+
+Imię i nazwisko: Juliusz Marciniak
+
+Zawód: Programista, DevOps, TechLead
+
+Doświadczenie: 10 lat
+
+Technologie:
+
+* Java, Spring
+* Jenkins, GitLab, Nexus
+* Docker, Kubernetes
+
+Jestem programistą Java z 10-letnim stażem. W codziennej pracy zajmuję się tematami cloudowymi i Kubernetesowymi. Oprócz tego doglądam architektury aplikacji w swoich projektach. Jestem entuzjastą nowych rozwiązań i technologii. Zwracam dużą uwagę, by rzeczy wdrażane przeze mnie były przemyślane i spójne. Czasami też programuję... i rekrutuję.
+
+== Agenda
+. Wprowadzenie do konteneryzacji
+.. Jakie problemy rozwiązuje konteneryzacja?
+.. Zasada działania i mechanizmy leżące u podstaw konteneryzacji
+.. Podstawy konteneryzacji na przykładzie Docker i/lub Podman
+.. Kontenery — tworzenie, konfigurowanie, zarządzanie
+.. Rejestr obrazów
+.. Budowanie obrazów niestandardowych
+.. Wolumeny — tworzenie, konfigurowanie, montowanie
+.. Konfiguracja i zarządzanie siecią
+.. Bezpieczeństwo
+. Platforma Kubernetes
+.. Architektura, możliwości oraz najważniejsze elementy klastra
+.. Instalacja / przygotowanie środowiska deweloperskiego
+.. Deskryptory zasobów
+.. Zarządzanie elementami klastra (imperatywne, deklaratywne)
+.. Podstawy administracji z wykorzystaniem narzędzia kubectl oraz panelu webowego
+. Praca z klastrem
+.. Tworzenie, wdrażanie i monitorowanie aplikacji w postaci Podów
+.. Przechowywanie i dostarczanie konfiguracji do aplikacji (zmienne środowiskowe, argumenty linii poleceń, ConfigMaps, Secrets)
+.. Efektywna administracja z wykorzystaniem etykiet, selektorów oraz kontrolerów
+.. Skalowanie usług (ręczne, automatyczne)
+.. Podział klastra na wirtualne przestrzenie
+.. Usługi jako sposób na komunikację między wdrożonymi aplikacjami
+.. Udostępnianie usług dla klientów zewnętrznych
+.. Ograniczanie komunikacji sieciowej z użyciem polityk
+.. Storage i dostęp do danych w oparciu o wolumeny
+.. Wdrażanie i utrzymanie usług stanowych
+.. Logowanie, monitorowanie oraz troubleshooting klastra i wdrożonych w nim aplikacji
+.. Ograniczenie uprawnień oraz kontrola dostępu do elementów klastra
+.. Helm jako natywny menedżer pakietów aplikacji w Kubernetes
+
+== Zasady
+* Staramy się nie spóźniać
+* Jesteśmy aktywni
+* Jeśli utknęliśmy na problemie podczas realizacji zadań — natychmiast informujemy
+* Nie śmiejemy się z innych i nie krytykujemy pomysłów innych
+* Każdy ma prawo do wyrażania swojej opinii
+* Przerwa na kawę co 1-1,5h
+* Przerwa obiadowa o 13:00
+
+<<<
+
+include::theory/README.adoc[leveloffset=1]
+
+<<<
+
+include::docker/README.adoc[leveloffset=1]
+
+<<<
+
+include::kubernetes/README.adoc[leveloffset=1]
